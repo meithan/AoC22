@@ -9,7 +9,7 @@ Go to day: [1](#day1) [2](#day2) [3](#day3)
 
 ---
 
-**Day 3**: [Rock Paper Scissors](https://adventofcode.com/2022/day/3)<a name="day3"></a> - [my solution](https://github.com/meithan/AoC22/blob/main/day03)
+**Day 3**: [Rucksack Reorganization](https://adventofcode.com/2022/day/3)<a name="day3"></a> - [my solution](https://github.com/meithan/AoC22/blob/main/day03)
 
 Python [sets](https://docs.python.org/3/library/stdtypes.html#set) make this problem really easy, specially as `&` acts as the intersection operator between them.
 
