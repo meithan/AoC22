@@ -9,7 +9,7 @@ Go to day: [1](#day1) [2](#day2)
 
 ---
 
-**Day 2**: [Rock Paper Scissors](https://adventofcode.com/2022/day/2)<a name="day2"></a> - [solution](https://github.com/meithan/AoC22/blob/main/day02)
+**Day 2**: [Rock Paper Scissors](https://adventofcode.com/2022/day/2)<a name="day2"></a> - [my solution](https://github.com/meithan/AoC22/blob/main/day02)
 
 A simple "just code what the statement says" problem.
 
@@ -17,7 +17,7 @@ I found it a bit weird that they used 'A', 'B' and 'C' for 'rock', 'paper' and '
 
 ---
 
-**Day 1**: [Calorie Counting](https://adventofcode.com/2022/day/1)<a name="day1"></a> - [solution](https://github.com/meithan/AoC22/blob/main/day02)
+**Day 1**: [Calorie Counting](https://adventofcode.com/2022/day/1)<a name="day1"></a> - [my solution](https://github.com/meithan/AoC22/blob/main/day01)
 
 And so it begins!
 
