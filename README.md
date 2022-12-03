@@ -5,7 +5,13 @@ I'll be updating this as a sort of mini blog whenever I can, commenting on the d
 
 This year I'm not trying to solve the problems as soon as they open, so I won't be reporting solve times.
 
-Go to day: [1](#day1) [2](#day2)
+Go to day: [1](#day1) [2](#day2) [3](#day3)
+
+---
+
+**Day 3**: [Rock Paper Scissors](https://adventofcode.com/2022/day/3)<a name="day3"></a> - [my solution](https://github.com/meithan/AoC22/blob/main/day03)
+
+Python [sets](https://docs.python.org/3/library/stdtypes.html#set) make this problem really easy, specially as `&` acts as the intersection operator between them.
 
 ---
 
