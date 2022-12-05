@@ -5,7 +5,17 @@ I'll be updating this as a sort of mini blog whenever I can, commenting on the d
 
 This year I'm not trying to solve the problems as soon as they open, so I won't be reporting solve times.
 
-Go to day: [1](#day1) [2](#day2) [3](#day3) [4](#day4)
+Go to day: [1](#day1) [2](#day2) [3](#day3) [4](#day4) [5](#day5)
+
+---
+
+**Day 5**: [Supply Stacks](https://adventofcode.com/2022/day/5)<a name="day3"></a> - [my solution](https://github.com/meithan/AoC22/blob/main/day05)
+
+A problem with [stacks](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)), which Python lists are [can be used as](https://docs.python.org/3/tutorial/datastructures.html#using-lists-as-stacks). The majority of the solving time was spent writing code to parse the information in the input. Each stack becomes a list, with the first element being the bottom crate and the last element the top crate.
+
+After parsing the input, it was only a matter of executing the instructions. For Part 1, we pop crates one at a time from the source stack and immediately append them to the destination stack. In Part 2, we first pop all the crates from the source stack and save them in a temporary list, reverse the list, then append the reversed list them to the destination stack (using `extend` instead of `append` saves a `for` loop).
+
+I used [copy.deepcopy](https://docs.python.org/3/library/copy.html) to save a copy of the initial configuration of the stacks and then recover it for Part 2.
 
 ---
 
