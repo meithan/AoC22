@@ -5,7 +5,7 @@ I'll be updating this as a sort of mini blog whenever I can, commenting on the d
 
 This year I'm not trying to solve the problems as soon as they open, so I won't be reporting solve times.
 
-Go to day: [1](#day1) [2](#day2) [3](#day3) [4](#day4) [5](#day5)
+Go to day: [1](#day1) [2](#day2) [3](#day3) [4](#day4) [5](#day5) [6](#day6)
 
 ---
 
