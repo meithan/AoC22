@@ -9,7 +9,15 @@ Go to day: [1](#day1) [2](#day2) [3](#day3) [4](#day4) [5](#day5)
 
 ---
 
-**Day 5**: [Supply Stacks](https://adventofcode.com/2022/day/5)<a name="day3"></a> - [my solution](https://github.com/meithan/AoC22/blob/main/day05)
+**Day 6**: [Tuning Trouble](https://adventofcode.com/2022/day/6)<a name="day6"></a> - [my solution](https://github.com/meithan/AoC22/blob/main/day06)
+
+Another problem where Python's rich syntax and tools shine. Extracting four consecutive items from a list or string is trivial with slicing: `datastream[i-4:i]`. Then, determining how many of them are distinct is easily accomplished by putting these items in a set and checking the size of the resulting set: `len(set(datastream[i-4:i]))` -- sets automatically weed out duplicates.
+
+Then repeat for Part 2, with 14 instead of 4.
+
+---
+
+**Day 5**: [Supply Stacks](https://adventofcode.com/2022/day/5)<a name="day5"></a> - [my solution](https://github.com/meithan/AoC22/blob/main/day05)
 
 A problem with [stacks](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)), which Python lists are [can be used as](https://docs.python.org/3/tutorial/datastructures.html#using-lists-as-stacks). The majority of the solving time was spent writing code to parse the information in the input. Each stack becomes a list, with the first element being the bottom crate and the last element the top crate.
 
@@ -19,7 +27,7 @@ I used [copy.deepcopy](https://docs.python.org/3/library/copy.html) to save a co
 
 ---
 
-**Day 4**: [Camp Cleanup](https://adventofcode.com/2022/day/4)<a name="day3"></a> - [my solution](https://github.com/meithan/AoC22/blob/main/day04)
+**Day 4**: [Camp Cleanup](https://adventofcode.com/2022/day/4)<a name="day4"></a> - [my solution](https://github.com/meithan/AoC22/blob/main/day04)
 
 This is about overlapping 1D number ranges (integers, really, but works for reals too).
 
