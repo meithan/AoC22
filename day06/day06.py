@@ -30,6 +30,4 @@ for i in range(14,len(datastream)):
     ans2 = i
     break
 
-
-
 print("Part 2:", ans2)
