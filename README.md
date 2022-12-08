@@ -13,7 +13,17 @@ Go to day: [1](#day1) [2](#day2) [3](#day3) [4](#day4) [5](#day5) [6](#day6) [7]
 
 A problem solvable by brute force, in this case by independently computing visibility or "scenic score" for every single tree. If the grid is N by N, this requires N^2 * 2N = O(N^3) operations, so it's not very efficient. But the problem input is small enough that both parts take a couple hundred milliseconds in Python.
 
-I used a couple of Pythonic syntax tools to make the code more elegant (albeit not more efficient). In Part 1 I used the [`all`](https://docs.python.org/3/library/functions.html#all) built-in function to check whether all trees in a given direction are shorted than the tree in question almost literal. In Part 2 I used [`functools.reduce`](https://docs.python.org/3/library/functools.html#functools.reduce) to compute the product of the distances in a single instruction.
+I used a couple of Pythonic syntax tools to make the code more elegant (albeit not more efficient). In Part 1 I used the [`all`](https://docs.python.org/3/library/functions.html#all) built-in function to check, almost literally, whether all trees in a given direction are shorted than the tree in question. In Part 2 I used [`functools.reduce`](https://docs.python.org/3/library/functools.html#functools.reduce) to compute the product of the distances in a single instruction.
+
+For fun I made a couple of plots from the data in my input. The first is the height distribution of the trees:
+
+image
+
+we clearly see that it's not uniform, as the trees get taller the closer to the center.
+
+The second plot shows the maximum distance from each tree to the edges, i.e. how far it can see. In black are those that can't see the edge in any direction.
+
+image
 
 ---
 
