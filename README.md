@@ -13,6 +13,8 @@ Go to day: [1](#day1) [2](#day2) [3](#day3) [4](#day4) [5](#day5) [6](#day6) [7]
 
 A problem solvable by brute force, in this case by independently computing visibility or "scenic score" for every single tree. If the grid is N by N, this requires N^2 * 2N = O(N^3) operations, so it's not very efficient. But the problem input is small enough that both parts take a couple hundred milliseconds in Python.
 
+I used a couple of Pythonic syntax tools to make the code more elegant (albeit not more efficient). In Part 1 I used the [`all`](https://docs.python.org/3/library/functions.html#all) built-in function to make check of whether all trees in a given direction are shorted than the tree in question almost literal. In Part 2 I used [`functools.reduce`](https://docs.python.org/3/library/functools.html#functools.reduce) to compute the product of the distances in a single instruction.
+
 ---
 
 **Day 7**: [No Space Left On Device](https://adventofcode.com/2022/day/7)<a name="day7"></a> - [my solution](https://github.com/meithan/AoC22/blob/main/day07)
