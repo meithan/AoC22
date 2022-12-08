@@ -5,7 +5,21 @@ I'll be updating this as a sort of mini blog whenever I can, commenting on the d
 
 This year I'm not trying to solve the problems as soon as they open, so I won't be reporting solve times.
 
-Go to day: [1](#day1) [2](#day2) [3](#day3) [4](#day4) [5](#day5) [6](#day6)
+Go to day: [1](#day1) [2](#day2) [3](#day3) [4](#day4) [5](#day5) [6](#day6) [7](#day7)
+
+---
+
+**Day 7**: [No Space Left On Device](https://adventofcode.com/2022/day/7)<a name="day7"></a> - [my solution](https://github.com/meithan/AoC22/blob/main/day07)
+
+A fun little problem of recreating a simple filesystem-like directory structure.
+
+I created two classes: a `File` which has a name and a size, and a `Directory` which has a name, a parent directory (another `Directory`, or `None` for the root directory), a list of subdirectories it contains (other `Directory` objects), a list of files it contains (`File` objects), and functions to get/add subdirs and to add files to it. It also contains a function to compute its size, which is achieved by adding the sizes of the files it contains plus the sizes of the subdirs it contains, in turn computed recursively.
+
+Another good chunk of the code is parsing the input: separating the `cd` and `ls` commands, and building the directory tree structure as all the lines are parsed. We essentially simulate the process indicated by the commands, and add new entries (dirs or files) as they're encountered. After all lines are parsed, we compute the size of the root directory, which recursively computes the sizes of all dirs in the tree.
+
+After that's done, Part 1 is solved by simply walking over the directory tree and adding up the relevent sizes: a `to_check` list contains only the root directory initially, and as long as this list is not empty we (1) pop one element from the list, (2) add its subdirs to the list, (3) if its size is not more than 100,000, we add it up into the total.
+
+For Part 2, we do a similar walk of the tree and look for the smallest directory that frees up enough space on removal.
 
 ---
 
