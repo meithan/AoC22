@@ -17,13 +17,13 @@ I used a couple of Pythonic syntax tools to make the code more elegant (albeit n
 
 For fun I made a couple of plots from the data in my input. The first is the height distribution of the trees:
 
-image
+![](https://github.com/meithan/AoC22/blob/main/day08/heights.png)
 
 we clearly see that it's not uniform, as the trees get taller the closer to the center.
 
 The second plot shows the maximum distance from each tree to the edges, i.e. how far it can see. In black are those that can't see the edge in any direction.
 
-image
+![](https://github.com/meithan/AoC22/blob/main/day08/distance.png)
 
 ---
 
