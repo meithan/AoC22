@@ -5,7 +5,13 @@ I'll be updating this as a sort of mini blog whenever I can, commenting on the d
 
 This year I'm not trying to solve the problems as soon as they open, so I won't be reporting solve times.
 
-Go to day: [1](#day1) [2](#day2) [3](#day3) [4](#day4) [5](#day5) [6](#day6) [7](#day7) [8](#day8)
+Go to day: [1](#day1) [2](#day2) [3](#day3) [4](#day4) [5](#day5) [6](#day6) [7](#day7) [8](#day8) [9](#day9)
+
+---
+
+**Day 9**: [Rope Bridge](https://adventofcode.com/2022/day/9)<a name="day9"></a> - [my solution](https://github.com/meithan/AoC22/blob/main/day09)
+
+A fun little problem that is mostly just about careful coding. I initially solved Part 1 by only considering the head and the one tail. Then for Part 2 I generalized the code so it could handle arbitrary-length ropes. Worked well.
 
 ---
 
