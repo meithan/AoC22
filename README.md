@@ -11,7 +11,7 @@ Go to day: [1](#day1) [2](#day2) [3](#day3) [4](#day4) [5](#day5) [6](#day6) [7]
 
 **Day 9**: [Rope Bridge](https://adventofcode.com/2022/day/9)<a name="day9"></a> - [my solution](https://github.com/meithan/AoC22/blob/main/day09)
 
-A fun little problem that is mostly just about careful coding. I initially solved Part 1 by only considering the head and the one tail. Then for Part 2 I generalized the code so it could handle arbitrary-length ropes. Worked well.
+A fun little problem that is mostly just about careful coding. I initially solved Part 1 by only considering the head and the one tail. Then for Part 2 I generalized the code so it could handle arbitrary-length ropes. Worked well. The only difference between the solutions of the two parts is the length of the rope.
 
 ---
 

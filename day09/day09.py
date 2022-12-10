@@ -19,7 +19,7 @@ incs = {
   "U": (0, +1), "D": (0, -1), "L": (-1, 0), "R": (+1, 0)
 }
 
-def update_tail():
+def update_tail(x, y):
   for s in range(1,rope_len):
     x1, y1 = x[s-1], y[s-1]
     x2, y2 = x[s], y[s]
@@ -65,20 +65,26 @@ def show():
       row += c
     print(row)
 
+def simulate_motion():
+  
+  x = [0 for _ in range(rope_len)]
+  y = [0 for _ in range(rope_len)]
+
+  visited = set()
+  for direc, steps in movements:
+    dx, dy = incs[direc]
+    for i in range(steps):
+      x[0] += dx; y[0] += dy
+      update_tail(x, y)
+      visited.add((x[-1], y[-1]))
+  
+  return visited
+
 # ------------------------------------------------------------------------------
 # Part 1
 
 rope_len = 2
-x = [0 for _ in range(rope_len)]
-y = [0 for _ in range(rope_len)]
-
-visited = set()
-for direc, steps in movements:
-  dx, dy = incs[direc]
-  for i in range(steps):
-    x[0] += dx; y[0] += dy
-    update_tail()
-    visited.add((x[-1], y[-1]))
+visited = simulate_motion()
 
 print("Part 1:", len(visited))
 
@@ -86,15 +92,6 @@ print("Part 1:", len(visited))
 # Part 2
 
 rope_len = 10
-x = [0 for _ in range(rope_len)]
-y = [0 for _ in range(rope_len)]
-
-visited = set()
-for direc, steps in movements:
-  dx, dy = incs[direc]
-  for i in range(steps):
-    x[0] += dx; y[0] += dy
-    update_tail()
-    visited.add((x[-1], y[-1]))
+visited = simulate_motion()
 
 print("Part 2:", len(visited))
