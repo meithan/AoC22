@@ -5,7 +5,23 @@ I'll be updating this as a sort of mini blog whenever I can, commenting on the d
 
 This year I'm not trying to solve the problems as soon as they open, so I won't be reporting solve times.
 
-Go to day: [1](#day1) [2](#day2) [3](#day3) [4](#day4) [5](#day5) [6](#day6) [7](#day7) [8](#day8) [9](#day9) [10](#day10)
+Go to day: [1](#day1) [2](#day2) [3](#day3) [4](#day4) [5](#day5) [6](#day6) [7](#day7) [8](#day8) [9](#day9) [10](#day10) [11](#day11)
+
+---
+
+**Day 11**: [Monkey in the Middle](https://adventofcode.com/2022/day/11)<a name="day11"></a> - [my solution](https://github.com/meithan/AoC22/blob/main/day11)
+
+This was the first problem (in Part 2) where simply carefully coding what the statement describes was not enough to solve it. Some additional thinking was needed.
+
+For Part 1 I simply coded the monkey item tossing game as described. A majority of the code was parsing the input (regular expressions make it a bit more elegant, although they were not really required) and organizing the information in a convenient way.
+
+For Part 2, the problem made it clear that the numbers would reach ridiculous levels. And indeed, after about 50 rounds they are larger than even a 8-byte integer can represent, 2**63-1 (Python 3 "normal" integers are 8-byte signed integers, apparently). After that, instead of overflowing Python automatically switches to (arbitrary-precision)[https://en.wikipedia.org/wiki/Arbitrary-precision_arithmetic] "big integers", which have no theoretical maximum value and are only limited in practice by the system memory required to store them. The price that is paid, however, is that arithmetics with these big integers are considerably slower (since they're not natively supported by the CPU), to the point where my program started to take a very long to simulate each round. There was no hope of reaching the 10,000th round by doing this.
+
+Fortunately the problem gave a clear hint: *find another way to keep [the numbers] manageable*. Since what determines to which other monkey each item is tossed is divisibility by a certain set of numbers (a different one for each monkey), one can keep only the numbers modulo the minimum common multiple of these numbers, and the divisibility checks will continue to be valid.
+
+To show this, let's say that the divisors for which divisibility is checked for the N monkeys are `a1`, `a2`, ..., `aN`. Let's call their minimum common multiple `m`. Since in this case they were all prime, then `m = a1*a2*...*aN`. Now consider any integer `x`. Let `y` be `x` reduced modulo `m`, i.e. `y = x mod m`. What this means is that `x` can be expressed as `x = y + n*m = y + n*(a1*a2*...*aN)` for some integer `n` and where `y < m`. Now let's say we want to check whether `x` is divisible by one of the factors of `m`, let's say `a1`. All we have to do is to check whether `y` (the reduced version of `x`) is divisible by `a1`. For if that is the case then this means that `y = b*a1` for some integer `b` and hence `x = b*a1 + n*(a1*a2*...*aN)`, and since both terms contain `a1` as a factor, then `x` must be divisible by `a1`. Conversely, if `y` *isn't* divisible by `a1`, then it is clear that `a` doesn't divide `x` either (the two terms can't be factored in that case as all the `a` are prime).
+
+Thus for Part 2 all that was needed is to keep the numbers modulo `m`. In my case `m` was 9699690, which means that the even when squaring the numbers never surpassed the maximum size of Python's "regular" integers, and hence arithmetics was fast. With this small change in the code, Part 2 takes a fraction of a second.
 
 ---
 
