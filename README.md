@@ -5,7 +5,15 @@ I'll be updating this as a sort of mini blog whenever I can, commenting on the d
 
 This year I'm not trying to solve the problems as soon as they open, so I won't be reporting solve times.
 
-Go to day: [1](#day1) [2](#day2) [3](#day3) [4](#day4) [5](#day5) [6](#day6) [7](#day7) [8](#day8) [9](#day9) [10](#day10) [11](#day11)
+Go to day: [1](#day1) [2](#day2) [3](#day3) [4](#day4) [5](#day5) [6](#day6) [7](#day7) [8](#day8) [9](#day9) [10](#day10) [11](#day11) [12](#day12)
+
+---
+
+**Day 12**: [Hill Climbing Algorithm](https://adventofcode.com/2022/day/12)<a name="day12"></a> - [my solution](https://github.com/meithan/AoC22/blob/main/day12)
+
+[Graph search](https://en.wikipedia.org/wiki/Graph_traversal) problems are always fun. This one was pretty straighforward, and a simple implementation of [breadth-first search](https://en.wikipedia.org/wiki/Breadth-first_search) was more than enough. I did get one thing wrong initially (exactly when to mark a search node as "visited"), showing that even BFS can be tricky. I might come back to this problem later to implement a more efficient algorithm like [Dijkstra's](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm), just for practice.
+
+For Part 2 the obvious brute-force approach, i.e. running BFS for all candidate starting positions to find the best one, was suficiently fast. This is sub-optimal, of course, and more advanced algorithms (such as [Bellman-Ford](https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm)) can compute shortest paths for multiple starting or ending positions much more efficiently.
 
 ---
 
