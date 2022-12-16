@@ -25,6 +25,10 @@ For Part 2, instead of implementing a simple sorting algorithm like [selection s
 
 For Part 2 the obvious brute-force approach, i.e. running BFS for all candidate starting positions to find the best one, was suficiently fast. This is sub-optimal, of course, and more advanced algorithms (such as [Bellman-Ford](https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm)) can compute shortest paths for multiple starting or ending positions much more efficiently.
 
+Here's a plot of the map and (one of) the optimal path found by BFS.
+
+![](https://github.com/meithan/AoC22/blob/main/day12/path.png)
+
 ---
 
 **Day 11**: [Monkey in the Middle](https://adventofcode.com/2022/day/11)<a name="day11"></a> - [my solution](https://github.com/meithan/AoC22/blob/main/day11)
