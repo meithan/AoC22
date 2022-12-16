@@ -11,7 +11,7 @@ Go to day: [1](#day1) [2](#day2) [3](#day3) [4](#day4) [5](#day5) [6](#day6) [7]
 
 **Day 13**: [Distress Signal](https://adventofcode.com/2022/day/13)<a name="day13"></a> - [my solution](https://github.com/meithan/AoC22/blob/main/day13)
 
-A problem where Python's powerful syntax and tools shine. Parsing the packets was as simple as calling `eval` on each line, as they are Python-parsable lists (which can have lists are elements).
+A problem where Python's powerful syntax and tools shine. Parsing the packets was as simple as calling [`eval`](https://docs.python.org/3/library/functions.html#eval) on each line, as they are Python-parsable lists (which can have lists as elements).
 
 Then, the core of the solution is the `compare` function, which takes two lists (packets, or sub-lists within a packet) and determines if they are ordered according to the rules, returning -1 if they are, 1 if they are not, or 0 if their order cannot be determined. This function goes through the elements of both lists and checks their order, exiting if one of the lists runs out. In the mixed cases (one element is an integer and the other is a list), we put the integer in a list and recursively call `compare` on the two sub-lists.
 
