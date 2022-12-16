@@ -5,7 +5,26 @@ I'll be updating this as a sort of mini blog whenever I can, commenting on the d
 
 This year I'm not trying to solve the problems as soon as they open, so I won't be reporting solve times.
 
-Go to day: [1](#day1) [2](#day2) [3](#day3) [4](#day4) [5](#day5) [6](#day6) [7](#day7) [8](#day8) [9](#day9) [10](#day10) [11](#day11) [12](#day12) [13](#day13)
+Go to day: [1](#day1) [2](#day2) [3](#day3) [4](#day4) [5](#day5) [6](#day6) [7](#day7) [8](#day8) [9](#day9) [10](#day10) [11](#day11) [12](#day12) [13](#day13) [14](#day14)
+
+---
+
+**Day 14**: [Regolith Reservoir](https://adventofcode.com/2022/day/14)<a name="day14"></a> - [my solution](https://github.com/meithan/AoC22/blob/main/day14)
+
+A variation of [Day 17, 2018](https://adventofcode.com/2018/day/17) with sand instead of water and different propagation rules.
+
+At first I was undecided if I wanted to allocate a big enough 2D array to store all positions, including empty spaces, which makes checking any position O(1), or to use sets storing only the actual walls and the sand that has been dropped, making checks O(log n) but requiring much less memory space. A typical [time-space trade-off](https://en.wikipedia.org/wiki/Space%E2%80%93time_tradeoff). In the end I went with the second approach.
+
+Apart from that, the rest was straightforward: simulate the falling sand until the given condition is met, and report how many sand units it took.
+
+This was the final result for Part 1:
+
+![](https://github.com/meithan/AoC22/blob/main/day14/part1.png)
+
+For Part 2, the final result looks a bit like a cut-away view of an Egyptian pyramid, with inner rooms and passages:
+
+![](https://github.com/meithan/AoC22/blob/main/day14/part2.png)
+
 
 ---
 
