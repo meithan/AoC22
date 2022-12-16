@@ -5,7 +5,17 @@ I'll be updating this as a sort of mini blog whenever I can, commenting on the d
 
 This year I'm not trying to solve the problems as soon as they open, so I won't be reporting solve times.
 
-Go to day: [1](#day1) [2](#day2) [3](#day3) [4](#day4) [5](#day5) [6](#day6) [7](#day7) [8](#day8) [9](#day9) [10](#day10) [11](#day11) [12](#day12)
+Go to day: [1](#day1) [2](#day2) [3](#day3) [4](#day4) [5](#day5) [6](#day6) [7](#day7) [8](#day8) [9](#day9) [10](#day10) [11](#day11) [12](#day12) [13](#day13)
+
+---
+
+**Day 13**: [Distress Signal](https://adventofcode.com/2022/day/13)<a name="day13"></a> - [my solution](https://github.com/meithan/AoC22/blob/main/day13)
+
+A problem where Python's powerful syntax and tools shine. Parsing the packets was as simple as calling `eval` on each line, as they are Python-parsable lists (which can have lists are elements).
+
+Then, the core of the solution is the `compare` function, which takes two lists (packets, or sub-lists within a packet) and determines if they are ordered according to the rules, returning -1 if they are, 1 if they are not, or 0 if their order cannot be determined. This function goes through the elements of both lists and checks their order, exiting if one of the lists runs out. In the mixed cases (one element is an integer and the other is a list), we put the integer in a list and recursively call `compare` on the two sub-lists.
+
+For Part 2, instead of implementing a simple sorting algorithm like [selection sort](https://en.wikipedia.org/wiki/Selection_sort), I leveraged Python's built-in [`sorted`](https://docs.python.org/3/library/functions.html#sorted) function (which uses [Timsort](https://en.wikipedia.org/wiki/Timsort), an efficient O(n*log n) algorithm), which TIL can accept a "conventional" comparison function (a `cmp(a,b)` function that returns a value that is negative if `a < b`, positve if `a > b` or 0 if `a == b`) as its `key` parameter [as long as it is first fed](https://docs.python.org/3/howto/sorting.html#comparison-functions) to [`functools.cmp_to_key`](https://docs.python.org/3/library/functools.html#functools.cmp_to_key).
 
 ---
 
