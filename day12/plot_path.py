@@ -5,6 +5,7 @@ import random
 from queue import Queue
 import matplotlib.pyplot as plt
 from mpl_toolkits.axes_grid1.axes_divider import make_axes_locatable
+import matplotlib.colors as mcolors
 import numpy as np
 
 # ==============================================================================
@@ -78,14 +79,22 @@ for j in range(nx):
 
 pos, steps, path = BFS(grid, start, goal)
 
-plt.figure(figsize=(20,5.2))
-plt.imshow(heights, cmap="terrain")
+plt.figure(figsize=(20,4.9))
+
+cmap = plt.get_cmap("terrain", 26)
+plt.imshow(heights, cmap=cmap)
+
+plt.xticks([])
+plt.yticks([])
 
 ax = plt.gca()
 divider = make_axes_locatable(ax)
 cax = divider.append_axes("right", size="1%", pad=0.05) 
 cb = plt.colorbar(cax=cax)
 cb.set_label("Terrain elevation")
+levels = np.arange(0,26,5)
+cb.set_ticks([0.5+24*l/25 for l in levels])
+cb.set_ticklabels(levels)
 
 plt.sca(ax)
 
