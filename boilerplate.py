@@ -1,4 +1,4 @@
-# Day XX
+# Day XX: 
 
 import sys
 
@@ -6,12 +6,16 @@ import sys
 
 # If no specific input given, default to "day<X>.in"
 if len(sys.argv) == 1:
-  sys.argv.append(sys.argv[0].replace(".py", ".in"))
+  input_fname = sys.argv[0].replace(".py", ".in")
+else:
+  input_fname = sys.argv[1]
 
-# Parse input
-with open(sys.argv[1]) as f:
+# Read and parse input
+with open(input_fname) as f:
   for line in f:
     pass
+
+
 
 # ------------------------------------------------------------------------------
 # Part 1
