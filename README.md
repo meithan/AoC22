@@ -5,7 +5,43 @@ I'll be updating this as a sort of mini blog whenever I can, commenting on the d
 
 This year I'm not trying to solve the problems as soon as they open, so I won't be reporting solve times.
 
-Go to day: [1](#day1) [2](#day2) [3](#day3) [4](#day4) [5](#day5) [6](#day6) [7](#day7) [8](#day8) [9](#day9) [10](#day10) [11](#day11) [12](#day12) [13](#day13) [14](#day14)
+Go to day: [1](#day1) [2](#day2) [3](#day3) [4](#day4) [5](#day5) [6](#day6) [7](#day7) [8](#day8) [9](#day9) [10](#day10) [11](#day11) [12](#day12) [13](#day13) [14](#day14) [15](#day15)
+
+---
+
+**Day 15**: [Beacon Exclusion Zone](https://adventofcode.com/2022/day/15)<a name="day15"></a> - [my solution](https://github.com/meithan/AoC22/blob/main/day15)
+
+This problem instantly revived my [PTSD](https://en.wikipedia.org/wiki/Post-traumatic_stress_disorder) of [Day 23, 2018](https://adventofcode.com/2018/day/23), of which I couldn't solve Part 2 (I have to revisit it sometime to finally beat it!).
+
+This one wasn't really that difficult, but I spent way too much brainpower figuring out how to merge integer number intervals. This should be easy, right?!
+
+Given two intervals [a1, a2] and [b1, b2], we want to determine if they overlap, and if they do, merge them into a new single interval; if they don't overlap, keep them both. Then we want to apply to rule to all pairs of a list of intervals in order to arrive at the "minimum" list of them (where all intervals that can be merged are merged).
+
+Determining if two intervals overlap is trivial: they do if the endpoint of one lies within the other interval. Since we're using integer numbers here, I also considered "touching" intervals, where the intervals technically don't overlap but are separated by only a distance of 1, as overlapping too; for instance, [1, 4] and [5, 10] "overlap" and would be merged to [1, 10].
+
+I initially did the two-intervals merge in a very messy way, checking 10 different conditions related to the endpoints to account for all cases. Later, I tremdendously simplified the code by finding out which of the two intervals comes before (i.e. whether a1 <= b1 or not), and with that the merge code reduces to one single check and a max():
+
+```
+# If we assume that a1 <= b1 for integer intervals [a1, a2] and [b1, b2]
+if b1 - a2 > 1:
+  return None    # The intervals can't be merged
+else:
+  return (a1, max(a2, b2))
+```
+
+Then, to "reduce" a list of intervals, we must check all pairs to see if they overlap; if they do, replace the two intervals by their merged equivalent, and start over the process with the list that is left. Stop when no remaining pair of intervals can be merged; that is the reduced list.
+
+I also initially did this in a messy way, until I figured that first sorting the intervals (by their left endpoint) makes checking all pairs unnecessary: we only need to check one interval with the one that follows it, and if they do overlap, merge them and start over. This is not only simpler but also faster, as sorting the intervals is O(N * log N) and then the check for merges is O(N) for a resulting O(N * log N) complexity, instead of O(N^2) if we must check all pairs (not accounting the restarts, which must be done in both cases). In this case N was very small, so this wasn't really important.
+
+For Part 2, brute force worked, although the program took about 40 seconds to complete: we determine and reduce the intervals for every y in the range of posible y's. If a single interval results, then that row can't contain the solution (as they all span the horizontal range). The one row which resulted in two intervals, separated by one empty space, yielded the answer.
+
+Here's a plot of the areas scanned by each sensor (blue dots and squares), with detected beacons as black dots and the target beacon (not detected by any sensor) in red. The orange square denotes the search area with all the possibilities indicated as gray dots.
+
+![](https://github.com/meithan/AoC22/blob/main/day15/test.png)
+
+That plot is for the test input, which has small numbers and hence can be visualized effectively. The following plot is for my actual problem input. At this scale we can't really see the open space where the solution lies, but zooming in in the interactive window, there it is.
+
+![](https://github.com/meithan/AoC22/blob/main/day15/day15.png)
 
 ---
 
